@@ -1,11 +1,71 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-    <meta charset="UTF-8">
-    <title>Mening Saytim</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qiziqarli sahifa</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: white;
+    text-align: center;
+}
+
+.container {
+    margin-top: 100px;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+p {
+    font-size: 20px;
+    opacity: 0.8;
+}
+
+.qr {
+    margin-top: 30px;
+    transition: 0.3s;
+}
+
+.qr:hover {
+    transform: scale(1.1);
+}
+
+button {
+    margin-top: 30px;
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    background: #00c6ff;
+    color: black;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #00a2cc;
+}
+</style>
+
 </head>
 <body>
-    <h1>Salom 👋</h1>
-    <p>Bu mening birinchi web saytim</p>
+
+<div class="container">
+    <h1>🔥 Maxfiy sahifa</h1>
+    <p>Bu yerda qiziqarli narsa bor...</p>
+
+    <img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://t.me/" alt="QR code">
+
+    <br>
+    <button onclick="alert('😎 Yana tez orada yangi funksiyalar qo‘shiladi!')">
+        Bosib ko‘r
+    </button>
+</div>
+
 </body>
 </html>
