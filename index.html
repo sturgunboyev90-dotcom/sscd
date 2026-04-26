@@ -3,47 +3,52 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Super-IT</title>
+<title>Bosh sahifa</title>
 
 <style>
-    body {
+body {
     margin: 0;
     font-family: Arial, sans-serif;
     background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-    color:  #ffffff; 
-    height: 100vh
+    color: white;
+
+    /* markazga joylash */
     display: flex;
-    flex-direction: column; 
     justify-content: center;
     align-items: center;
-        }
+    height: 100vh;
+}
 
 .container {
-     text-align: center; 
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    backdrop-filter: blur(10px); 
-}
-    margin-top: 200px;
+    text-align: center;
 }
 
 h1 {
     font-size: 50px;
 }
 
+p {
+    font-size: 20px;
+    opacity: 0.8;
+}
+
+/* TO‘G‘RILANGAN TUGMA */
 .btn {
-    margin-top: 1px;
-    padding: 1000px 30px;
+    margin-top: 30px;
+    padding: 15px 30px; /* normal o‘lcham */
     font-size: 18px;
     border: none;
-    border-radius: 1000px;
+    border-radius: 10px;
     background: #00c6ff;
     cursor: pointer;
+    transition: 0.3s;
+
+    display: inline-block; /* cho‘zilib ketmasligi uchun */
 }
 
 .btn:hover {
-    background: #1f2d35
+    background: #00a2cc;
+    transform: scale(1.05);
 }
 </style>
 
@@ -64,4 +69,5 @@ function goLogin() {
 </script>
 
 </body>
+</html>
 </html>
