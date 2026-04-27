@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="uz">
 <head>
@@ -73,6 +74,7 @@
     border:none;
     border-radius:6px;
     background:#00e5ff;
+    cursor:pointer;
 }
 
 /* SITE */
@@ -174,7 +176,7 @@
 
 </div>
 
-<button onclick="logout()" style="position:fixed;top:10px;right:10px;padding:8px;border:none;border-radius:6px;">
+<button onclick="logout()" style="position:fixed;top:10px;right:10px;padding:8px;border:none;border-radius:6px;cursor:pointer;">
 Chiqish
 </button>
 
@@ -188,7 +190,7 @@ const site = document.getElementById("site");
 const loginInput = document.getElementById("loginInput");
 const passwordInput = document.getElementById("passwordInput");
 
-// 🔥 sahifa ochilganda
+// sahifa yuklanganda
 window.onload = () => {
     if(localStorage.getItem("login")==="true"){
         loader.style.display="none";
@@ -204,12 +206,26 @@ window.onload = () => {
 // login oynasi
 function openLogin(){
     login.style.display="flex";
+    loginInput.focus();
 }
+
+// ENTER bosish
+loginInput.addEventListener("keydown", e=>{
+    if(e.key==="Enter") enterSite();
+});
+passwordInput.addEventListener("keydown", e=>{
+    if(e.key==="Enter") enterSite();
+});
 
 // kirish
 function enterSite(){
     let u = loginInput.value.trim();
     let p = passwordInput.value.trim();
+
+    if(u==="" || p===""){
+        alert("Login va parol kiriting!");
+        return;
+    }
 
     if(u==="sardorbek" && p==="0226"){
         localStorage.setItem("login","true");
@@ -217,9 +233,16 @@ function enterSite(){
         hero.style.display="none";
         site.style.display="block";
     } else {
-        alert("Login yoki parol noto‘g‘ri ❌");
+        alert("Xato login yoki parol!");
     }
 }
+
+// tashqariga bosilsa yopiladi
+login.addEventListener("click", e=>{
+    if(e.target === login){
+        login.style.display="none";
+    }
+});
 
 // logout
 function logout(){
@@ -230,3 +253,4 @@ function logout(){
 
 </body>
 </html>
+```
