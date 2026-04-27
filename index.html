@@ -25,35 +25,26 @@
     flex-direction: column;
 }
 
-/* LOGO */
 .logo {
-    width: 150px;
+    width: 120px;
     animation: spin 2s linear infinite;
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
 
-/* TEXT */
 .loader-text {
-    margin-top: 20px;
+    margin-top: 15px;
     color: #e0f7fa;
-    font-size: 26px;
-    animation: move 0.7s infinite alternate;
+    font-size: 22px;
 }
 
-@keyframes move {
-    0% { transform: translateX(-12px); }
-    100% { transform: translateX(12px); }
-}
-
-/* MAIN */
+/* HERO */
 .hero {
+    display: none;
     height: 100vh;
     background: linear-gradient(135deg, #0b1d2a, #02070d);
-    display: none;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -64,7 +55,7 @@
 }
 
 .hero h1 {
-    font-size: 32px;
+    font-size: 28px;
     margin-bottom: 10px;
 }
 
@@ -82,12 +73,47 @@
     cursor: pointer;
 }
 
-.btn:hover {
-    background: #1a4fb5;
+/* LOGIN */
+.login {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0,0,0,0.85);
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box {
+    background: #1f2a32;
+    padding: 25px;
+    border-radius: 10px;
+    width: 260px;
+    text-align: center;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 6px;
+    border: none;
+}
+
+.login-box button {
+    width: 100%;
+    padding: 10px;
+    background: #2d6cdf;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
 }
 </style>
-
 </head>
+
 <body>
 
 <!-- LOADER -->
@@ -96,540 +122,50 @@
     <div class="loader-text">Xush kelibsiz</div>
 </div>
 
-<!-- MAIN -->
-<div class="hero" id="main">
+<!-- HERO -->
+<div class="hero" id="hero">
     <div class="hero-content">
         <h1>Turg'unboyev Sardorbek Dilshodjon o'g'li</h1>
-        <p>Forma — nafaqat vakolat, balki ulkan ma’naviy mas’uliyatdir</p>
-        <button class="btn">Kirish</button>
+        <p>Forma — nafaqat vakolat, balki mas’uliyat</p>
+        <button class="btn" onclick="openLogin()">Kirish</button>
+    </div>
+</div>
+
+<!-- LOGIN -->
+<div class="login" id="login">
+    <div class="login-box">
+        <h3 style="color:white;">Kirish</h3>
+        <input type="text" id="loginInput" placeholder="Login">
+        <input type="password" id="passwordInput" placeholder="Parol">
+        <button onclick="enterSite()">Kirish</button>
     </div>
 </div>
 
 <script>
+/* Loader → Hero */
 setTimeout(() => {
     document.getElementById("loader").style.display = "none";
-    document.getElementById("main").style.display = "flex";
+    document.getElementById("hero").style.display = "flex";
 }, 1500);
+
+/* Login ochish */
+function openLogin() {
+    document.getElementById("login").style.display = "flex";
+}
+
+/* Login tekshirish */
+function enterSite() {
+    let login = document.getElementById("loginInput").value;
+    let password = document.getElementById("passwordInput").value;
+
+    if (login === "sardorbek" && password === "0226") {
+        alert("Kirish muvaffaqiyatli ✅");
+        document.getElementById("login").style.display = "none";
+    } else {
+        alert("Login yoki parol noto‘g‘ri ❌");
+    }
+}
 </script>
 
 </body>
 </html>
-<style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #1f2c3a, #3a4f63);
-    color: white;
-}
-
-/* Header */
-.header {
-    text-align: center;
-    padding: 80px 20px;
-}
-
-.header h1 {
-    font-size: 50px;
-    margin: 0;
-}
-
-.header p {
-    margin-top: 10px;
-    font-size: 18px;
-    opacity: 0.8;
-}
-
-/* Cards */
-.container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-    padding: 40px;
-}
-
-.card {
-    background: rgba(255,255,255,0.1);
-    padding: 20px;
-    border-radius: 15px;
-    text-align: center;
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    background: rgba(255,255,255,0.2);
-}
-
-.card h3 {
-    margin-bottom: 10px;
-}
-
-.card a {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 8px 15px;
-    background: #00c3ff;
-    color: white;
-    border-radius: 8px;
-    text-decoration: none;
-}
-
-.card a:hover {
-    background: #0099cc;
-}
-</style>
-
-</head>
-<body>
-
-<div class="wrapper">
-    <div class="center">
-        <p class="anim-text">Saytga xush kelibsiz</p>
-    </div>
-</div>
-
-<style>
-.anim-text {
-    opacity: 0;
-    transform: translateX(-50px);
-    animation: slideIn 1s ease forwards;
-}
-
-@keyframes slideIn {
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-</style>
-
-    <div class="right">
-
-<div class="container">
-    <div class="container">
-    
-    <div class="card">
-        <h3>Ilovalar</h3>
-        <p>Foydali siz uchun</p>
-        <a href="https://t.me" target="_blank">Ochish</a>
-    </div>
-
-    <div class="card">
-        <h3>YouTube</h3>
-        <p>Video va kontent platformasi</p>
-        <a href="https://youtube.com" target="_blank">Ochish</a>
-    </div>
-
-    <div class="card">
-        <h3>Google Maps</h3>
-        <p>Yo‘l va navigatsiya</p>
-        <a href="https://maps.google.com" target="_blank">Ochish</a>
-    </div>
-
-    <div class="card">
-        <h3>Instagram</h3>
-        <p>Rasm va video ulashish</p>
-        <a href="https://instagram.com" target="_blank">Ochish</a>
-    </div>
-
-</div>
-
-     <div class="card">
-        <h3>Ilovalar</h3>
-        <p>Foydali siz uchun</p>
-        <a href="https://t.me" target="_blank">Ochish</a>
-    </div>
-
-    <div class="card">
-    <h3>Ilovalar</h3>
-    <p>Foydali siz uchun</p>
-    <a href="https://t.me" target="_blank">Ochish</a>
-</div>
-
-<style>
-.card {
-    width: 240px;
-    padding: 22px;
-    border-radius: 16px;
-}
-
-.card h3 {
-    font-size: 20px;
-    margin-bottom: 8px;
-}
-
-.card p {
-    font-size: 14px;
-    margin-bottom: 16px;
-}
-
-.card a {
-    padding: 8px 20px;
-    font-size: 14px;
-    border-radius: 8px;
-}<div class="card">
-    <h3>Ilovalar</h3>
-    <p>Foydali siz uchun</p>
-    <a href="https://t.me" target="_blank">Ochish</a>
-</div>
-
-<style>
-.card {
-    width: 240px;
-    padding: 22px;
-    border-radius: 16px;
-}
-
-.card h3 {
-    font-size: 20px;
-    margin-bottom: 8px;
-}
-
-.card p {
-    font-size: 14px;
-    margin-bottom: 16px;
-}
-
-.card a {
-    padding: 8px 20px;
-    font-size: 14px;
-    border-radius: 8px;
-}
-</div>
-
-<style>
-.card {
-    width: 240px;
-    padding: 22px;
-    border-radius: 16px;
-}
-
-.card h3 {
-    font-size: 20px;
-    margin-bottom: 8px;
-}
-
-.card p {
-    font-size: 14px;
-    margin-bottom: 16px;
-}
-
-.card a {
-    padding: 8px 20px;
-    font-size: 14px;
-    border-radius: 8px;
-}
-</div>
-
-<style>
-.card {
-    width: 240px;
-    padding: 22px;
-    border-radius: 16px;
-}
-
-.card h3 {
-    font-size: 20px;
-    margin-bottom: 8px;
-}
-
-.card p {
-    font-size: 14px;
-    margin-bottom: 16px;
-}
-
-.card a {
-    padding: 8px 20px;
-    font-size: 14px;
-    border-radius: 8px;
-}
-</div>
-
-<style>
-.card {
-    width: 240px;
-    padding: 22px;
-    border-radius: 16px;
-}
-
-.card h3 {
-    font-size: 20px;
-    margin-bottom: 8px;
-}
-
-.card p {
-    font-size: 14px;
-    margin-bottom: 16px;
-}
-
-.card a {
-    padding: 8px 20px;
-    font-size: 14px;
-    border-radius: 8px;
-}
-</div>
-
-<style>
-.card {
-    width: 240px;
-    padding: 22px;
-    border-radius: 16px;
-}
-
-.card h3 {
-    font-size: 20px;
-    margin-bottom: 8px;
-}
-
-.card p {
-    font-size: 14px;
-    margin-bottom: 16px;
-}
-
-.card a {
-    padding: 8px 20px;
-    font-size: 14px;
-    border-radius: 8px;
-}
-    </div>
-
-<div class="card">
-    <h3>Ilovalar</h3>
-    <p>Foydali siz uchun</p>
-    <a href="https://t.me" target="_blank">Ochish</a>
-</div>
-
-<style>
-.card {
-    width: 240px;
-    padding: 22px;
-    border-radius: 16px;
-}
-
-.card h3 {
-    font-size: 20px;
-    margin-bottom: 8px;
-}
-
-.card p {
-    font-size: 14px;
-    margin-bottom: 16px;
-}
-
-.card a {
-    padding: 8px 20px;
-    font-size: 14px;
-    border-radius: 8px;
-}
-</div>
-
-<style>
-.card {
-    width: 240px;
-    padding: 22px;
-    border-radius: 16px;
-}
-
-.card h3 {
-    font-size: 20px;
-    margin-bottom: 8px;
-}
-
-.card p {
-    font-size: 14px;
-    margin-bottom: 16px;
-}
-
-.card a {
-    padding: 8px 20px;
-    font-size: 14px;
-    border-radius: 8px;
-}<div class="card">
-    <h3>Ilovalar</h3>
-    <p>Foydali siz uchun</p>
-    <a href="https://t.me" target="_blank">Ochish</a>
-</div>
-
-<style>
-.card {
-    width: 240px;
-    padding: 22px;
-    border-radius: 16px;
-}
-
-.card h3 {
-    font-size: 20px;
-    margin-bottom: 8px;
-}
-
-.card p {
-    font-size: 14px;
-    margin-bottom: 16px;
-}
-
-.card a {
-    padding: 8px 20px;
-    font-size: 14px;
-    border-radius: 8px;
-}
-</div>
-
-<style>
-.card {
-    width: 240px;
-    padding: 22px;
-    border-radius: 16px;
-}
-
-.card h3 {
-    font-size: 20px;
-    margin-bottom: 8px;
-}
-
-.card p {
-    font-size: 14px;
-    margin-bottom: 16px;
-}
-
-.card a {
-    padding: 8px 20px;
-    font-size: 14px;
-    border-radius: 8px;
-}
-</div>
-
-<style>
-.card {
-    width: 240px;
-    padding: 22px;
-    border-radius: 16px;
-}
-
-.card h3 {
-    font-size: 20px;
-    margin-bottom: 8px;
-}
-
-.card p {
-    font-size: 14px;
-    margin-bottom: 16px;
-}
-
-.card a {
-    padding: 8px 20px;
-    font-size: 14px;
-    border-radius: 8px;
-}
-</div>
-
-<style>
-.card {
-    width: 240px;
-    padding: 22px;
-    border-radius: 16px;
-}
-
-.card h3 {
-    font-size: 20px;
-    margin-bottom: 8px;
-}
-
-.card p {
-    font-size: 14px;
-    margin-bottom: 16px;
-}
-
-.card a {
-    padding: 8px 20px;
-    font-size: 14px;
-    border-radius: 8px;
-}
-</style>
-</div>
-
-<style>
-.card {
-    width: 240px;
-    padding: 22px;
-    border-radius: 16px;
-}
-
-.card h3 {
-    font-size: 20px;
-    margin-bottom: 8px;
-}
-
-.card p {
-    font-size: 14px;
-    margin-bottom: 16px;
-}
-
-.card a {
-    padding: 8px 20px;
-    font-size: 14px;
-    border-radius: 8px;
-}
-</style>
-</div>
-
-<style>
-.card {
-    width: 240px;
-    padding: 22px;
-    border-radius: 16px;
-}
-
-.card h3 {
-    font-size: 20px;
-    margin-bottom: 8px;
-}
-
-.card p {
-    font-size: 14px;
-    margin-bottom: 16px;
-}
-
-.card a {
-    padding: 8px 20px;
-    font-size: 14px;
-    border-radius: 8px;
-}
-</style>
-    </div>
-
-    <div class="card">
-    <h3>Ilovalar</h3>
-    <p>Foydali siz uchun</p>
-    <a href="https://t.me" target="_blank">Ochish</a>
-</div>
-
-<style>
-.card {
-    width: 240px;
-    padding: 22px;
-    border-radius: 16px;
-}
-
-.card h3 {
-    font-size: 20px;
-    margin-bottom: 8px;
-}
-
-.card p {
-    font-size: 14px;
-    margin-bottom: 16px;
-}
-
-.card a {
-    padding: 8px 20px;
-    font-size: 14px;
-    border-radius: 8px;
-}
-</style>
-    </div>
-
-</div>
-
-</body>
-</html>
-
