@@ -178,4 +178,308 @@ function enterSite() {
 </script>
 
 </body>
+    <!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Super IT</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap" rel="stylesheet">
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background: linear-gradient(-45deg,#0f2027,#203a43,#2c5364,#1c1c2b);
+    background-size:400% 400%;
+    animation:bg 10s ease infinite;
+    color:white;
+    transition:0.4s;
+}
+
+@keyframes bg{
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+/* NAVBAR */
+.nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 30px;
+}
+.logo{font-size:20px;font-weight:700}
+
+.menu{
+    display:flex;
+    align-items:center;
+}
+
+.menu a{
+    margin-left:15px;
+    text-decoration:none;
+    color:#ccc;
+    font-size:14px;
+}
+.menu a:hover{color:#fff}
+
+/* TOGGLE */
+#themeToggle{
+    margin-left:15px;
+    padding:6px 8px;
+    border:none;
+    border-radius:8px;
+    background:#ffffff22;
+    color:white;
+    cursor:pointer;
+}
+
+/* HERO */
+.hero{
+    text-align:center;
+    padding:40px 20px;
+}
+
+/* LOGO */
+.hero-logo{
+    display:flex;
+    justify-content:center;
+    margin-bottom:15px;
+}
+.logo-circle{
+    width:70px;height:70px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    background: linear-gradient(45deg,#00e5ff,#2196f3);
+    animation: spin 6s linear infinite, glow 2s ease-in-out infinite alternate;
+}
+.logo-circle i{font-size:30px}
+
+@keyframes spin{
+    from{transform:rotate(0)}
+    to{transform:rotate(360deg)}
+}
+@keyframes glow{
+    from{box-shadow:0 0 15px #00e5ff}
+    to{box-shadow:0 0 30px #2196f3}
+}
+
+.hero h1{font-size:26px;margin-bottom:5px}
+.hero p{font-size:13px;color:#bbb}
+
+/* GRID */
+.container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:18px;
+    padding:25px;
+    max-width:1100px;
+    margin:auto;
+}
+
+/* CARD */
+.card{
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.08);
+    backdrop-filter:blur(12px);
+    border-radius:18px;
+    padding:18px 15px;
+    text-align:center;
+    transition:0.3s;
+}
+.card:hover{
+    transform:translateY(-6px) scale(1.03);
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* ICON */
+.icon i{
+    font-size:30px;
+    margin-bottom:8px;
+    transition:0.3s;
+}
+.card:hover .icon i{
+    transform:scale(1.2);
+}
+
+/* COLORS */
+.youtube{color:#ff0000}
+.instagram{color:#e1306c}
+.telegram{color:#229ED9}
+.maps{color:#34a853}
+.canva{color:#00c4cc}
+.figma{color:#a259ff}
+.ai{color:#00e5ff}
+.learn{color:#ff9800}
+.beeline{color:#FFD600}
+
+/* TEXT */
+.card h3{font-size:15px;margin-bottom:5px}
+.card p{font-size:12px;color:#ccc}
+
+/* BUTTON */
+.card a{
+    display:inline-block;
+    margin-top:8px;
+    padding:5px 12px;
+    border-radius:8px;
+    background:#ffffff20;
+    color:white;
+    text-decoration:none;
+    font-size:12px;
+}
+.card a:hover{background:#ffffff40}
+
+/* FOOTER */
+.footer{
+    text-align:center;
+    padding:15px;
+    font-size:12px;
+    color:#aaa;
+}
+
+/* LIGHT MODE */
+body.light{
+    background: linear-gradient(135deg,#f5f7fa,#c3cfe2);
+    color:#111;
+}
+
+body.light .menu a{color:#333}
+body.light .menu a:hover{color:#000}
+
+body.light .card{
+    background: rgba(255,255,255,0.9);
+    color:#111;
+}
+
+body.light .card p{color:#555}
+
+body.light .card a{
+    background:#00000010;
+    color:#111;
+}
+
+body.light .footer{color:#555}
+
+</style>
+</head>
+
+<body>
+
+<div class="nav">
+    <div class="logo">🚀 Super IT</div>
+    <div class="menu">
+        <a href="#">Home</a>
+        <a href="#">Ilovalar</a>
+        <a href="#">Aloqa</a>
+        <button id="themeToggle"><i class='bx bx-moon'></i></button>
+    </div>
+</div>
+
+<div class="hero">
+    <div class="hero-logo">
+        <div class="logo-circle">
+            <i class='bx bx-rocket'></i>
+        </div>
+    </div>
+    <h1>Eng foydali IT ilovalar</h1>
+    <p>Barcha kerakli platformalar bir joyda</p>
+</div>
+
+<div class="container">
+
+<div class="card">
+<div class="icon ai"><i class='bx bx-brain'></i></div>
+<h3>AI</h3>
+<a href="#">Ochish</a>
+</div>
+
+<div class="card">
+<div class="icon youtube"><i class='bx bxl-youtube'></i></div>
+<h3>YouTube</h3>
+<a href="https://youtube.com" target="_blank">Ochish</a>
+</div>
+
+<div class="card">
+<div class="icon instagram"><i class='bx bxl-instagram'></i></div>
+<h3>Instagram</h3>
+<a href="https://instagram.com" target="_blank">Ochish</a>
+</div>
+
+<div class="card">
+<div class="icon telegram"><i class='bx bxl-telegram'></i></div>
+<h3>Telegram</h3>
+<a href="https://t.me" target="_blank">Ochish</a>
+</div>
+
+<div class="card">
+<div class="icon maps"><i class='bx bx-map'></i></div>
+<h3>Google Maps</h3>
+<a href="https://maps.google.com" target="_blank">Ochish</a>
+</div>
+
+<div class="card">
+<div class="icon learn"><i class='bx bx-book'></i></div>
+<h3>E-Learn</h3>
+<a href="#">Ochish</a>
+</div>
+
+<div class="card">
+<div class="icon canva"><i class='bx bxl-canva'></i></div>
+<h3>Canva</h3>
+<a href="https://canva.com" target="_blank">Ochish</a>
+</div>
+
+<div class="card">
+<div class="icon figma"><i class='bx bxl-figma'></i></div>
+<h3>Figma</h3>
+<a href="https://figma.com" target="_blank">Ochish</a>
+</div>
+
+<div class="card">
+<div class="icon beeline"><i class='bx bx-tv'></i></div>
+<h3>Beeline TV</h3>
+<a href="https://beeline.uz" target="_blank">Ochish</a>
+</div>
+
+</div>
+
+<div class="footer">© 2026 Super IT</div>
+
+<script>
+const btn = document.getElementById("themeToggle");
+
+// system theme
+if(!localStorage.getItem("theme")){
+    if(window.matchMedia('(prefers-color-scheme: light)').matches){
+        document.body.classList.add("light");
+    }
+}
+
+// load saved
+if(localStorage.getItem("theme") === "light"){
+    document.body.classList.add("light");
+    btn.innerHTML = "<i class='bx bx-sun'></i>";
+}
+
+// click
+btn.onclick = () => {
+    document.body.classList.toggle("light");
+
+    if(document.body.classList.contains("light")){
+        localStorage.setItem("theme","light");
+        btn.innerHTML = "<i class='bx bx-sun'></i>";
+    } else {
+        localStorage.setItem("theme","dark");
+        btn.innerHTML = "<i class='bx bx-moon'></i>";
+    }
+}
+</script>
+
+</body>
+</html>
 </html>
